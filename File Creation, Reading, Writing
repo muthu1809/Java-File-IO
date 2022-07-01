@@ -1,0 +1,151 @@
+		File file = 
+	new File("/home/arulnirai/Documents/HTML/Java/SpringBoot/Guna");
+		boolean present = file.exists();
+		System.out.println(present);
+			file.mkdirs();
+			
+File file = 
+	new File("/home/arulnirai/Documents/HTML/Java/SpringBoot/Guna/krishna.txt");
+	file.createNewFile();
+	file.delete();
+	
+			
+			
+File file = 
+	new File("/home/arulnirai/Documents/HTML/Java/SpringBoot/Guna/krishna.txt");
+	file.createNewFile();
+	//file.delete();
+	System.out.println(file.canWrite());
+	
+// Listing Files and Folders
+File file = new File("/home/arulnirai/Documents/HTML");
+	String[] files_folders =	file.list();
+	for(String name: files_folders)
+	{
+		System.out.println(name);
+	}
+	
+	// Checking folder or file
+		
+		File file = 
+	new File("/home/arulnirai/Documents/HTML");
+		System.out.println(file.isDirectory());
+		System.out.println(file.isFile());
+	
+// Listing Only Files 
+		
+		File file = 
+	new File("/home/arulnirai/Documents/HTML");
+	File[] files =		file.listFiles();
+	for(File ff: files)
+	{
+		if(ff.isFile())
+		System.out.println(ff);
+	}
+	
+		// Listing Only Folders 
+		File file = 
+	new File("/home/arulnirai/Documents/HTML");
+	File[] files =		file.listFiles();
+	for(File ff: files)
+	{
+		if(ff.isDirectory())
+		System.out.println(ff);
+	}
+	
+		// Listing Only specific files
+		File file = 
+	new File("/home/arulnirai/Documents/HTML");
+	File[] files =		file.listFiles();
+	for(File ff: files)		//krishna
+	{
+		if(ff.isFile())
+		{
+		String fileName = ff.getName();
+		//
+		if(fileName.endsWith("html"))
+		{
+			System.out.println(fileName);
+		}
+	}
+		
+	}	
+
+	// File Writing
+		File file = 
+	new File("/home/arulnirai/Documents/HTML/amritaa.txt");
+		file.createNewFile();
+	FileWriter pen = new FileWriter(file, true); //check with false append
+	pen.write("krishna");
+	pen.write("\n");
+	
+	pen.flush(); 
+	pen.close();
+	
+	// File Writing
+		File file = 
+	new File("/home/arulnirai/Documents/HTML/amritaa.txt");
+		file.createNewFile();
+	FileWriter pen = new FileWriter(file, true); //check with false append
+	BufferedWriter bw = new BufferedWriter(pen);
+	bw.newLine();
+	bw.write("guna");
+	
+	bw.flush(); 
+	bw.close();	
+	
+		// File Reading
+		File file = 
+	new File("/home/arulnirai/Documents/HTML/amritaa.txt");
+		
+	FileReader fileReader = new FileReader(file); 
+		int no = fileReader.read();
+		System.out.println(no);
+	// When we reached End of File, read() method will return -1. 
+		while(no!=-1)
+		{
+			System.out.print((char)no);
+			no = fileReader.read();
+		}
+	
+	
+	// File Reading with BufferedReader
+		File file = 
+	new File("/home/arulnirai/Documents/HTML/amritaa.txt");
+		
+	FileReader fileReader = new FileReader(file); 
+	BufferedReader br = new BufferedReader(fileReader);
+		int no = br.read();
+		System.out.println(no);
+	// When we reached End of File, read() method will return -1. 
+		while(no!=-1)
+		{
+			System.out.print((char)no);
+			no = br.read();
+		}
+	
+	// File Reading with BufferedReader
+		File file = 
+	new File("/home/arulnirai/Documents/HTML/amritaa.txt");
+		
+	FileReader fileReader = new FileReader(file); 
+	BufferedReader br = new BufferedReader(fileReader);
+		String st = br.readLine(); 
+		while(st!=null) {
+		System.out.println(st);
+		st = br.readLine();
+		}
+		
+//Copy Image File
+		FileInputStream fis = new FileInputStream("/home/arulnirai/Documents/HTML/linux.jpeg");
+		FileOutputStream fos = new 
+		FileOutputStream("/home/arulnirai/Documents/HTML/tux.jpeg"); 
+		int no = fis.read();
+		while(no!=-1)
+		{
+			fos.write(no);
+			no = fis.read();
+		}
+		fos.flush();
+		fos.close();
+		
